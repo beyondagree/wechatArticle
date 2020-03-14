@@ -23,14 +23,14 @@ public class ScheduleConfig {
     @Autowired
     WechatService wechatService;
 
-    @Scheduled(cron = "${corn.configuration.auto.get.articles}") // 每天6点10分执行一次
+//    @Scheduled(cron = "${corn.configuration.auto.get.articles}") // 每天6点10分执行一次
     public void getDailyArticle() {
         logger.info("getDailyArticle定时任务启动");
         scheduleService.getDailyArticle();
         logger.info("getDailyArticle定时任务执行结束");
     }
 
-    @Scheduled(cron = "${corn.configuration.auto.send.articles}") // 每天8点10分执行一次
+//    @Scheduled(cron = "${corn.configuration.auto.send.articles}") // 每天8点10分执行一次
     public void autoSendDailyArticle() {
         logger.info("autoSendDailyArticle定时任务启动");
         wechatService.autoSendLatelyArticles();
